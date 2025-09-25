@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "backdrop-filter",
+          "border-bottom: 1px solid color-mix(in srgb, var(--muted) 20%, transparent 80%)",
+          "border: 1px solid color-mix(in srgb, var(--brand) 30%, transparent 85%)",
+          "border: 1px solid color-mix(in srgb, var(--muted) 20%, transparent 80%)",
+          "border: 1px solid color-mix(in srgb,var(--muted) 20%, transparent 80%)",
+          "border: 1.5px solid color-mix(in srgb, var(--muted) 28%, transparent 72%)",
+          "scrollbar-width",
+          "scrollbar-width: thin"
+        ]
+      }
+    ],
+    "no-inline-styles": "off",
+    "axe/name-role-value": [
+      "default",
+      {
+        "link-name": "off"
+      }
+    ],
+    "disown-opener": "off"
+  }
+}
