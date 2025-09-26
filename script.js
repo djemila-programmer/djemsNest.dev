@@ -213,7 +213,7 @@ const readTexts = {
 };
 
 // Récupérer la langue sauvegardée ou par défaut
-let currentLang = localStorage.getItem("lang") || "fr";
+let currentLang = localStorage.getItem("lang") || "en";
     // -------- ABOUT ME : Read More --------
 const aboutBtn = document.getElementById("readMoreBtn");
 const aboutMoreText = document.getElementById("more-text");
@@ -516,6 +516,52 @@ function translatePage(lang) {
     });
 }
 
+
+function translateServices(lang) {
+    document.querySelectorAll(".service_box").forEach(box => {
+        const moreText = box.querySelector(".more-text");
+        const key = moreText?.getAttribute("data-translate");
+        if (key && translations[lang][key]) {
+            moreText.textContent = translations[lang][key];
+        }
+
+        const btn = box.querySelector(".readMoreBtn");
+        if (btn) {
+            const isVisible = getComputedStyle(moreText).display !== "none";
+            btn.textContent = isVisible ? readTexts[lang].less : readTexts[lang].more;
+        }
+    });
+}
+function updateReadMoreButton(button) {
+    const moreText = document.getElementById("more-text");
+    if (!moreText) return;
+
+    const isVisible = getComputedStyle(moreText).display !== "none";
+    button.textContent = isVisible ? readTexts[currentLang].less : readTexts[currentLang].more;
+}
+const aboutBtn = document.getElementById("readMoreBtn");
+const aboutMoreText = document.getElementById("more-text");
+
+if (aboutBtn && aboutMoreText) {
+    // Restaurer état sauvegardé
+    if (localStorage.getItem("about-readmore") === "expanded") {
+        aboutMoreText.style.display = "block";
+    } else {
+        aboutMoreText.style.display = "none";
+    }
+    updateReadMoreButton(aboutBtn);
+
+    // Clic
+    aboutBtn.addEventListener("click", e => {
+        e.preventDefault();
+        const isHidden = getComputedStyle(aboutMoreText).display === "none";
+        aboutMoreText.style.display = isHidden ? "block" : "none";
+        updateReadMoreButton(aboutBtn);
+
+        localStorage.setItem("about-readmore", isHidden ? "expanded" : "collapsed");
+    });
+}
+
 translatePage(currentLang);
     function translateNode(node, lang) {
         if (node.nodeType === Node.TEXT_NODE) {
@@ -530,6 +576,9 @@ translatePage(currentLang);
 
     const setLanguage = (lang) => {
         translateNode(document.body, lang);
+        translatePage(lang);      // traduction générale
+    translateServices(lang);
+    updateAllReadMoreButtons(); 
         localStorage.setItem("lang", lang);
         const languageSelect = document.getElementById("language");
         if (languageSelect) languageSelect.value = lang;
