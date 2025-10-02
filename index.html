@@ -28,6 +28,13 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+        <label for="language">Language:</label>
+        <select id="language">
+            <option value="en" selected>English</option>
+            <option value="fr">Français</option>
+        </select>
+    </li>
         </ul>
         <div id="menu_icon" class="bx bx-menu"></div>
         
@@ -54,14 +61,6 @@
     <span data-color="#9C27B0" style="background-color:#9C27B0"></span>
   </div>
 </div>
-<div class="language-switcher">
-    <label for="language">Language:</label>
-    <select id="language">
-        <option value="en" selected>English</option>
-        <option value="fr">Français</option>
-    </select>
-</div>
-
 </header>
     <!-- home------------------------------------------------------------------->
      <section id="home" class="home">
@@ -139,19 +138,8 @@
             <span>Let me introduce Myself</span>
             <h2>About me</h2>
             <h3>An Inspiring Story</h3>
-            <p>Hello! My name is Djémilatou BONKOUNGOU, a passionate computer science student and aspiring full-stack developer. 
-    I create elegant and functional websites, design engaging user experiences, and constantly explore new technologies. 
-    My goal is to combine creativity and coding to build innovative solutions that make people’s lives easier and more enjoyable.
-    </p>
-    <p id="more-text" style="display: none;">
-        Beyond coding, I am deeply interested in entrepreneurship and digital innovation. 
-        I believe that technology is not just about solving problems but also about creating opportunities. 
-        In the future, I aspire to contribute to impactful projects that empower communities, 
-        especially in Africa, by promoting digital solutions adapted to local needs.
-    </p>
-            <div class="btn_box">
-        <a href="#" class="btn" id="readMoreBtn">Read More!</a>
-    </div>   
+            <p data-translate="intro">Hello! My name is Djémilatou BONKOUNGOU, a passionate computer science student and aspiring full-stack developer. I create elegant and functional websites, design engaging user experiences, and constantly explore new technologies. My goal is to combine creativity and coding to build innovative solutions that make people’s lives easier and more enjoyable. Beyond coding, I am deeply interested in entrepreneurship and digital innovation. I believe that technology is not just about solving problems but also about creating opportunities. In the future, I aspire to contribute to impactful projects that empower communities, especially in Africa, by promoting digital solutions adapted to local needs.</p>
+
         </div>
      </section>
 
@@ -173,8 +161,9 @@
                 From business cards to digital banners, I ensure high-quality designs that make your identity stand out.
                  </p>
                 <div class="btn_box service_btn">
-                    <a href="#" class="btn readMoreBtn">Read More!</a>
-                </div> 
+    <a href="#" class="btn readMoreBtn" data-translate="more">Read More!</a>
+</div>
+
             </div>
             <div class="service_box">
                 <i class='bx bx-code-alt service_icon' ></i>
@@ -188,8 +177,9 @@
                 that meet professional standards and solve real-world problems.
             </p>
                 <div class="btn_box service_btn">
-                    <a href="#" class="btn readMoreBtn">Read More!</a>
-                </div>
+    <a href="#" class="btn readMoreBtn" data-translate="more">Read More!</a>
+</div>
+
             </div>
             <div class="service_box">
                 <i class='bx bx-desktop service_icon' ></i>
@@ -203,8 +193,9 @@
                 I ensure an elegant design and smooth user experience.
                 </p>
                 <div class="btn_box service_btn">
-                    <a href="#" class="btn readMoreBtn">Read More!</a>
-                </div>
+    <a href="#" class="btn readMoreBtn" data-translate="more">Read More!</a>
+</div>
+
             </div>
         </div>
      </section>
@@ -283,8 +274,8 @@
                     <small>Creativity</small>
                 </div>
                 <div class="circle-container">
-                    <div class="circle" data-percent="60">
-                        <span class="percent-text">60%</span>
+                    <div class="circle" data-percent="68">
+                        <span class="percent-text">68%</span>
                     </div>
                     <small>Leadership</small>
                 </div>
@@ -415,7 +406,6 @@
                 </div> 
             </div>
             <h3 class="contact-title padd-15">Have You Any Questions ?</h3>
-            <h3 class="contact-sub-title padd-15"data-translate="at-your-service">I'M&nbsp; AT&nbsp;  YOUR &nbsp; SERVICES</h3>
         </div>
         <div class="contact-info">
             <div class="contact-info-item">
@@ -436,13 +426,11 @@
             <div class="contact-info-item">
                 <i class="fa fa-globe"></i>
                 <h4>Website</h4>
-                <p>djemsNest.dev</p>
+                <p>djemsNest .dev</p>
             </div>
         </div>
 
         <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
-        <h3 class="contact-sub-title padd-15" data-translate="responsive-messages">I'M &nbsp; VERY &nbsp; RESPONSIVE &nbsp; TO &nbsp; MESSAGES</h3>
-
         <div class="contact-form">
         <form action="https://formspree.io/f/mandwqyp" method="POST">
     <div class="form-group-row">

@@ -272,6 +272,17 @@ document.querySelectorAll(".readMoreBtn").forEach((button, index) => {
         }
     });
 });
+function updateReadMoreButtons(lang) {
+  document.querySelectorAll(".readMoreBtn").forEach((button, index) => {
+    const moreText = button.closest(".service_box").querySelector(".more-text");
+    const isHidden = getComputedStyle(moreText).display === "none";
+
+    button.textContent = isHidden 
+      ? readTexts[lang].more 
+      : readTexts[lang].less;
+  });
+}
+
 
     // -------- Stars background --------
     const starsContainer = document.getElementById("stars");
@@ -316,11 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Let me introduce Myself": "Let me introduce Myself",
             "About me": "About me",
             "An Inspiring Story": "An Inspiring Story",
-            "Hello! My name is Djémilatou BONKOUNGOU, a passionate computer science student and aspiring full-stack developer. \n    I create elegant and functional websites, design engaging user experiences, and constantly explore new technologies. \n    My goal is to combine creativity and coding to build innovative solutions that make people’s lives easier and more enjoyable.": 
-                "Hello! My name is Djémilatou BONKOUNGOU, a passionate computer science student and aspiring full-stack developer. I create elegant and functional websites, design engaging user experiences, and constantly explore new technologies. My goal is to combine creativity and coding to build innovative solutions that make people’s lives easier and more enjoyable.",
-            "Beyond coding, I am deeply interested in entrepreneurship and digital innovation. \n        I believe that technology is not just about solving problems but also about creating opportunities. \n        In the future, I aspire to contribute to impactful projects that empower communities, \n        especially in Africa, by promoting digital solutions adapted to local needs.": 
-                "Beyond coding, I am deeply interested in entrepreneurship and digital innovation. I believe that technology is not just about solving problems but also about creating opportunities. In the future, I aspire to contribute to impactful projects that empower communities, especially in Africa, by promoting digital solutions adapted to local needs.",
-            "Read More!": "Read More!",
+            intro: "Hello! My name is Djémilatou BONKOUNGOU, a passionate computer science student and aspiring full-stack developer. I create elegant and functional websites, design engaging user experiences, and constantly explore new technologies. My goal is to combine creativity and coding to build innovative solutions that make people’s lives easier and more enjoyable. Beyond coding, I am deeply interested in entrepreneurship and digital innovation. I believe that technology is not just about solving problems but also about creating opportunities. In the future, I aspire to contribute to impactful projects that empower communities, especially in Africa, by promoting digital solutions adapted to local needs.",
 
             // About Stats
             "Years Experience": "Years Experience",
@@ -338,12 +345,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Website": "Website",
             "Creating modern, responsive, and visually appealing websites for all projects.": "Creating modern, responsive, and visually appealing websites for all projects.",
             "I design and develop websites that are mobile-friendly, SEO-optimized, and easy to maintain. Whether it’s a personal portfolio, e-commerce, or corporate website, I ensure an elegant design and smooth user experience.": "I design and develop websites that are mobile-friendly, SEO-optimized, and easy to maintain. Whether it’s a personal portfolio, e-commerce, or corporate website, I ensure an elegant design and smooth user experience.",
-            "My work focuses on delivering unique and professional graphic solutions adapted to your brand. \n                From business cards to digital banners, I ensure high-quality designs that make your identity stand out.":
-                "My work focuses on delivering unique and professional graphic solutions adapted to your brand. From business cards to digital banners, I ensure high-quality designs that make your identity stand out.",
-            "I specialize in Full-Stack development using modern technologies. \n                From front-end design to back-end functionality, I build scalable and efficient applications \n                that meet professional standards and solve real-world problems.":
-                "I specialize in Full-Stack development using modern technologies. From front-end design to back-end functionality, I build scalable and efficient applications that meet professional standards and solve real-world problems.",
-            "I design and develop websites that are mobile-friendly, SEO-optimized, and easy to maintain. \n                Whether it’s a personal portfolio, e-commerce, or corporate website, \n                I ensure an elegant design and smooth user experience.":
-                "I design and develop websites that are mobile-friendly, SEO-optimized, and easy to maintain. Whether it’s a personal portfolio, e-commerce, or corporate website, I ensure an elegant design and smooth user experience.",
+            "My work focuses on delivering unique and professional graphic solutions adapted to your brand. \n                From business cards to digital banners, I ensure high-quality designs that make your identity stand out.":"My work focuses on delivering unique and professional graphic solutions adapted to your brand. From business cards to digital banners, I ensure high-quality designs that make your identity stand out.",
+            "I specialize in Full-Stack development using modern technologies. \n                From front-end design to back-end functionality, I build scalable and efficient applications \n                that meet professional standards and solve real-world problems.":"I specialize in Full-Stack development using modern technologies. From front-end design to back-end functionality, I build scalable and efficient applications that meet professional standards and solve real-world problems.",
+            "I design and develop websites that are mobile-friendly, SEO-optimized, and easy to maintain. \n                Whether it’s a personal portfolio, e-commerce, or corporate website, \n                I ensure an elegant design and smooth user experience.":"I design and develop websites that are mobile-friendly, SEO-optimized, and easy to maintain. Whether it’s a personal portfolio, e-commerce, or corporate website, I ensure an elegant design and smooth user experience.",
 
             // Skills Section
             "Technical and Professional": "Technical and Professional",
@@ -387,13 +391,13 @@ document.addEventListener("DOMContentLoaded", () => {
             // Contact Section
             "Contact Me": "Contact Me",
             "Have You Any Questions ?": "Have You Any Questions?",
-            "I'M  AT   YOUR  SERVICES": "I'M AT YOUR SERVICES",
+            "I'M AT YOUR SERVICES": "I'M AT YOUR SERVICES",
             "Call me On": "Call me On",
             "Office": "Office",
             "Email": "Email",
             "Website": "Website",
             "SEND ME AN EMAIL": "SEND ME AN EMAIL",
-            "I'M  VERY  RESPONSIVE  TO  MESSAGES": "I'M VERY RESPONSIVE TO MESSAGES",
+            "I'M VERY RESPONSIVE TO MESSAGES": "I'M VERY RESPONSIVE TO MESSAGES",
            "placeholder-name": "Name",
         "placeholder-email": "Email",
         "placeholder-subject": "Subject",
@@ -418,11 +422,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Let me introduce Myself": "Permettez-moi de me présenter",
             "About me": "À propos de moi",
             "An Inspiring Story": "Une histoire inspirante",
-            "Hello! My name is Djémilatou BONKOUNGOU, a passionate computer science student and aspiring full-stack developer. \n    I create elegant and functional websites, design engaging user experiences, and constantly explore new technologies. \n    My goal is to combine creativity and coding to build innovative solutions that make people’s lives easier and more enjoyable.":
-                "Bonjour ! Je m'appelle Djémilatou BONKOUNGOU, étudiante passionnée en informatique et future développeuse full-stack. Je crée des sites élégants et fonctionnels, conçois des expériences utilisateur engageantes et explore constamment les nouvelles technologies. Mon objectif est de combiner créativité et programmation pour construire des solutions innovantes qui facilitent et enrichissent la vie des gens.",
-            "Beyond coding, I am deeply interested in entrepreneurship and digital innovation. \n        I believe that technology is not just about solving problems but also about creating opportunities. \n        In the future, I aspire to contribute to impactful projects that empower communities, \n        especially in Africa, by promoting digital solutions adapted to local needs.":
-                "Au-delà du code, je m'intéresse profondément à l'entrepreneuriat et à l'innovation numérique. Je crois que la technologie ne se limite pas à résoudre des problèmes, mais aussi à créer des opportunités. À l'avenir, j'aspire à contribuer à des projets impactants qui autonomisent les communautés, notamment en Afrique, en promouvant des solutions numériques adaptées aux besoins locaux.",
-            "Read More!": "En savoir plus !",
+            intro: "Bonjour ! Je m'appelle Djémilatou BONKOUNGOU, étudiante passionnée en informatique et future développeuse full-stack. Je crée des sites élégants et fonctionnels, conçois des expériences utilisateur engageantes et explore constamment les nouvelles technologies. Mon objectif est de combiner créativité et programmation pour construire des solutions innovantes qui facilitent et enrichissent la vie des gens. Au-delà du code, je m'intéresse profondément à l'entrepreneuriat et à l'innovation numérique. Je crois que la technologie ne se limite pas à résoudre des problèmes, mais aussi à créer des opportunités. À l'avenir, j'aspire à contribuer à des projets impactants qui autonomisent les communautés, notamment en Afrique, en promouvant des solutions numériques adaptées aux besoins locaux.",
+
+            
             "Years Experience": "Années d'expérience",
             "Academic & Personal Projects": "Projets académiques et personnels",
             "International Internship": "Stage international",
@@ -436,10 +438,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "Creating modern, responsive, and visually appealing websites for all projects.": "Création de sites modernes, responsive et visuellement attrayants pour tous les projets.",
            
             "graphic-details": "Mon travail se concentre sur la livraison de solutions graphiques uniques et professionnelles adaptées à votre marque. Des cartes de visite aux bannières digitales, j'assure des designs de haute qualité qui font ressortir votre identité.",
-            "graphic-details-1":
-            "Je me spécialise dans le développement Full-Stack en utilisant des technologies modernes. Du design front-end à la fonctionnalité back-end, je construis des applications évolutives et efficaces qui répondent aux standards professionnels et résolvent des problèmes réels.",
-            "graphic-details-2":
-            "Je conçois et développe des sites web adaptés aux mobiles, optimisés SEO et faciles à maintenir. Qu’il s’agisse d’un portfolio personnel, d’un site e-commerce ou d’un site d’entreprise, j’assure un design élégant et une expérience utilisateur fluide.",
+            "graphic-details-1":"Je me spécialise dans le développement Full-Stack en utilisant des technologies modernes. Du design front-end à la fonctionnalité back-end, je construis des applications évolutives et efficaces qui répondent aux standards professionnels et résolvent des problèmes réels.",
+            "graphic-details-2":"Je conçois et développe des sites web adaptés aux mobiles, optimisés SEO et faciles à maintenir. Qu’il s’agisse d’un portfolio personnel, d’un site e-commerce ou d’un site d’entreprise, j’assure un design élégant et une expérience utilisateur fluide.",
             // Skills
             "Technical and Professional": "Technique et Professionnel",
             "My Skills": "Mes Compétences",
@@ -482,13 +482,13 @@ document.addEventListener("DOMContentLoaded", () => {
             // Contact Section
             "Contact Me": "Contactez-moi",
             "Have You Any Questions ?": "Vous avez des questions ?",
-            "at-your-service": "Je suis à votre service",
+            "I'M AT YOUR SERVICES": "Je suis à votre service",
             "Call me On": "Appelez-moi au",
             "Office": "Bureau",
             "Email": "Email",
             "Website": "Site Web",
             "SEND ME AN EMAIL": "Envoyez-moi un email",
-            "responsive-messages": "Je réponds rapidement aux messages",
+            "I'M VERY RESPONSIVE TO MESSAGES": "Je réponds rapidement aux messages",
             "placeholder-name": "Nom",
             "placeholder-subject": "Sujet",
             "Message": "Message",
@@ -576,9 +576,10 @@ translatePage(currentLang);
 
     const setLanguage = (lang) => {
         translateNode(document.body, lang);
-        translatePage(lang);      // traduction générale
-    translateServices(lang);
-    updateAllReadMoreButtons(); 
+        translatePage(lang);
+        updateReadMoreButtons(lang);      // traduction générale
+        translateServices(lang);
+    
         localStorage.setItem("lang", lang);
         const languageSelect = document.getElementById("language");
         if (languageSelect) languageSelect.value = lang;
