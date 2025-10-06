@@ -44,6 +44,7 @@
 
 body{
     font-family: "Poppins", sans-serif;
+    padding-top: calc(var(--header-height) + 8px);
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -78,7 +79,9 @@ header{
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: var(--header-height);
     padding: 20px 10%;
+     --header-height: 72px;
 }
 .logo{
     font-size: 26px;
@@ -612,6 +615,128 @@ margin: .3rem;
         flex: 0 0 auto;
     }
 }
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    background-color: #fff;
+  }
+
+  header nav ul {
+    display: none; /* cacher le menu normal */
+  }
+
+  .menu-toggle {
+    display: block; /* bouton hamburger visible */
+  }
+
+  .theme {
+    display: block;
+    margin: auto;
+  }
+  
+}
+
+/* --- RESPONSIVE DESIGN POUR TÉLÉPHONE --- */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: #1a0026; /* ta couleur violet sombre */
+        color: #fff;
+        padding: 0 10px;
+        overflow-x: hidden;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background-color: #1a0026;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fdb8a1; /* rose/orangé */
+    }
+.logo::after
+    { 
+        width: 10px; 
+        height: 16px; 
+        top: 20%; 
+        right: 70%; }
+    .logo::before 
+    { 
+        width: 10px; 
+        height: 16px; 
+        top: 60%; 
+        left: 1%; 
+        display: block; }
+    /* Icône du menu hamburger */
+    .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        color: #fdb8a1;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    /* Liste cachée par défaut */
+    .lists {
+        display: none;
+        flex-direction: column;
+        background-color: #1a0026;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 70%;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        text-align: right;
+        padding: 20px;
+    }
+
+    /* Quand le menu est ouvert (via JS) */
+    .lists.active {
+        display: flex;
+    }
+
+    .lists li {
+        margin: 15px 0;
+    }
+
+    .lists a {
+        color: #fdb8a1;
+        font-size: 1.1rem;
+        text-decoration: none;
+    }
+
+    /* Section d'accueil */
+    .home {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .home h1, .home h2, .home h3 {
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+
+    .home p {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .home img {
+        width: 180px;
+        height: auto;
+        border-radius: 12px;
+        margin-top: 15px;
+    }
+}
 
 /* Animation de glissement du menu */
 @keyframes fadeInRight {
@@ -631,7 +756,7 @@ section{
     padding: 100px 10%;
 } 
 .home{
-    min-height:100vh ;
+    min-height:calc(100vh - var(--header-height)); ;
     height: 100%;
     width: 100%;
     display: grid;
