@@ -358,65 +358,7 @@ span{
     position: relative; /* ou absolute si tu veux le placer en haut */
 }
 /* === Très petit téléphone : 320px de large === */
-@media (max-width: 320px) {
-    body {
-        font-size: 12px;/* ajuste la taille générale si nécessaire */
-        scroll-behavior: smooth;
-        text-decoration: none;
-    }
 
-    header {
-        padding: 15px 5%;
-    }
-
-    .home {
-        grid-template-columns: 1fr; /* une seule colonne */
-        grid-gap: 2rem;
-    }
-
-    .home_content {
-        padding: 50px 5%;
-        margin-bottom: 200px;
-    }
-
-    .btn_box {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        gap: 8px;
-    }
-
-    .btn_box a.btn {
-        width: 100%;
-        height: 40px;
-        font-size: 0.85rem;
-    }
-
-    .lists {
-        width: 100%;
-        padding-top: 50px;
-    }
-
-    .about {
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem;
-    }
-
-    .portfolio_galery {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .portfolio_galery .port-box {
-        width: 100%;
-    }
-
-    .img_box img {
-        width: 120px !important;
-        margin-bottom: 20rem;
-    }
-}
 
 /* Affiché seulement sur petits écrans */
 /* Menu caché par défaut sur mobile */
@@ -638,7 +580,11 @@ margin: .3rem;
 
 /* --- RESPONSIVE DESIGN POUR TÉLÉPHONE --- */
 @media screen and (max-width: 768px) {
-
+body{
+    overflow-x: hidden;         /* empêche le scroll horizontal */
+    overscroll-behavior-x: none; /* empêche le "rebond" horizontal sur mobile */
+    
+}
     .logo {
         font-size: 1.4rem;
         font-weight: bold;
@@ -664,6 +610,9 @@ margin: .3rem;
         color: #fdb8a1;
         cursor: pointer;
         z-index: 1100;
+        top: 10px;   /* réduire pour être plus proche du logo */
+        right: 10px; /* réduire l’écart avec le bord */
+
     }
 
     /* Liste cachée par défaut */
