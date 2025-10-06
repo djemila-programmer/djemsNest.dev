@@ -638,24 +638,6 @@ margin: .3rem;
 
 /* --- RESPONSIVE DESIGN POUR TÉLÉPHONE --- */
 @media screen and (max-width: 768px) {
-    body {
-        background-color: #1a0026; /* ta couleur violet sombre */
-        color: #fff;
-        padding: 0 10px;
-        overflow-x: hidden;
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-        background-color: #1a0026;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-    }
 
     .logo {
         font-size: 1.4rem;
@@ -666,8 +648,8 @@ margin: .3rem;
     { 
         width: 10px; 
         height: 16px; 
-        top: 20%; 
-        right: 70%; }
+        top: 17%; 
+        right: 60%; }
     .logo::before 
     { 
         width: 10px; 
